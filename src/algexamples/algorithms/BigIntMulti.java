@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
-
-import java.util.Random;
-
-/**
- * and open the template in the editor.
- */
 package algexamples.algorithms;
 
 import algexamples.utilities.Utilities;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Vector;
 
-/*
- * @author Corey
+/* My Implementation of multipling 2 Big Numbers together. 
+ * @author Corey Willinger
  */
 public class BigIntMulti extends BaseAlgorithm {
 
@@ -53,7 +43,6 @@ public class BigIntMulti extends BaseAlgorithm {
         
         System.out.println(num1 + " x " + num2);
         System.out.println(multiplyInt());
-
         return 1;
     }
 
