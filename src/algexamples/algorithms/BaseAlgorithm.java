@@ -5,18 +5,21 @@ package algexamples.algorithms;
  *
  * @author Corey
  */
-public abstract class BaseAlgorithm implements IAlgorithm {
-
-    public BaseAlgorithm() {
+public class BaseAlgorithm implements IAlgorithm {
+    private String title;
+    public BaseAlgorithm(String title) {
+        this.title = title;
     }
 
     /**
      * Main function to initiate algorithm example.
      *
-     * @return String
+     * @return Int
      */
     @Override
-    public abstract int runAlgorithm();
+    public int runAlgorithm(){
+        return 0;
+    }
 
     /**
      * Returns the title of the Algorithm
@@ -24,7 +27,9 @@ public abstract class BaseAlgorithm implements IAlgorithm {
      * @return String
      */
     @Override
-    public abstract String getTitle();
+    public String getTitle(){
+        return title;
+    }
 
     /**
      * Returns the String sequence current step of the Algorithm
@@ -32,6 +37,8 @@ public abstract class BaseAlgorithm implements IAlgorithm {
      * @return String
      */
     @Override
-    public abstract String getCurrentStep();
+    public String getCurrentStep(){
+        return "";
+    }
 
 }

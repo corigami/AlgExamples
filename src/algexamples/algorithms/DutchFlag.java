@@ -7,6 +7,8 @@ package algexamples.algorithms;
 
 import algexamples.utilities.Utilities;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Corey
@@ -16,11 +18,7 @@ public class DutchFlag extends BaseAlgorithm {
     // Sort the input array, the array is assumed to
     // have values in {0, 1, 2}
     public DutchFlag() {
-    }
-
-    @Override
-    public String getTitle() {
-        return "Dutch Flag Problem";
+        super("Dutch Flag Problem");
     }
 
     static void sort012(int a[], int arr_size) {
@@ -207,15 +205,28 @@ public class DutchFlag extends BaseAlgorithm {
         System.out.print("\n");
     }
 
-    /*Driver function to check for above functions*/
-    public static void main(String[] args) {
-
-    }
-
     @Override
     public int runAlgorithm() {
-        run012();
-        //run0123();
+        System.out.println("Would you like to run 3 or 4 color problem?\n" +
+            "Please enter 3 or 4:");
+        boolean validInput = false;
+        Scanner in = new Scanner(System.in);
+        int num=0;
+        while(!validInput){
+            num = in.nextInt();
+            if(!(num == 3 || num == 4)){
+                System.out.println("Invalid input - Please enter 3 or 4:");
+            }else{
+                validInput = true;
+            }
+        }
+        if(num==3) {
+            run012();
+        }else if(num==4) {
+            run0123();
+        }else{
+            return 0;
+        }
         return 1;
     }
 
@@ -227,14 +238,14 @@ public class DutchFlag extends BaseAlgorithm {
     private void run012() {
         int arr[] = Utilities.genRandomArray(0, 2, 20);
         sort012(arr, arr.length);
-        System.out.println("Array after seggregation ");
+        System.out.println("Array after segregation ");
         printArray(arr, arr.length);
     }
 
     private void run0123() {
         int arr2[] = Utilities.genRandomArray(0, 3, 20);
         sort0123(arr2, arr2.length);
-        System.out.println("Array after seggregation ");
+        System.out.println("Array after segregation ");
         printArray(arr2, arr2.length); 
     }
 

@@ -34,7 +34,7 @@ public class Utilities {
      * @param prompt
      * @return
      */
-    public static String getStringInput(String prompt){
+    public static String getStringFromConsole(String prompt){
         Scanner scanner = new Scanner(System.in);
         String input;
         System.out.println(prompt);
@@ -42,7 +42,7 @@ public class Utilities {
         return input;
     }
     
-        public static int getInt(String prompt){
+        public static int getIntFromConsole(String prompt){
         Scanner scanner = new Scanner(System.in);
         int input;
         System.out.println(prompt);

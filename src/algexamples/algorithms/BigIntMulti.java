@@ -14,6 +14,7 @@ public class BigIntMulti extends BaseAlgorithm {
     String output;
 
     public BigIntMulti() {
+        super("Big Integer Multiplication");
     }
 
     final void init(int size) {
@@ -39,16 +40,11 @@ public class BigIntMulti extends BaseAlgorithm {
     public int runAlgorithm() {
         assert (!num1.isEmpty());
         assert (!num2.isEmpty());
-        init(Utilities.getInt("How many digits in your big numbers?"));
+        init(Utilities.getIntFromConsole("How many digits in your big numbers?"));
         
         System.out.println(num1 + " x " + num2);
         System.out.println(multiplyInt());
         return 1;
-    }
-
-    @Override
-    public String getTitle() {
-        return "Big Integer Mulitplication";
     }
 
     @Override
@@ -99,6 +95,7 @@ public class BigIntMulti extends BaseAlgorithm {
                 bigNum.set(k, bigNum.get(k) + num1i * num2j);
                 bigNum.set(k + 1, bigNum.get(k + 1) + (int) bigNum.get(k) / 10);
                 bigNum.set(k, bigNum.get(k) % 10);
+             //   printResult(bigNum);
             }
         }
         for (Integer num : bigNum) {
@@ -113,6 +110,22 @@ public class BigIntMulti extends BaseAlgorithm {
         }
         System.out.println("--------------------");
         return result;
+    }
+
+    private void printResult(ArrayList<Integer> bigNum){
+        boolean isPositiveVal = true;
+        String result="";
+        for (Integer num : bigNum) {
+            result += num.toString();
+        }
+        result = new StringBuffer(result).reverse().toString();
+        while (result.charAt(0) == '0') {
+            result = result.substring(1);
+        }
+        if (!isPositiveVal) {
+            result = "-" + result;
+        }
+        System.out.println(result);
     }
 
 }
